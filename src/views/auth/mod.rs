@@ -12,7 +12,6 @@ pub fn auth_factory(app: &mut ServiceConfig) {
         prefix: "/auth/".to_string(),
     };
 
-    println!("{}", auth_path.define("hi".to_string()));
     app.route(&auth_path.define("login".to_string()), web::get().to(login));
     app.route(
         &auth_path.define("logout".to_string()),
