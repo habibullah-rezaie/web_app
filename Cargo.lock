@@ -1983,6 +1983,7 @@ dependencies = [
  "actix-web",
  "async-std",
  "futures",
+ "serde",
  "serde_json",
 ]
 
