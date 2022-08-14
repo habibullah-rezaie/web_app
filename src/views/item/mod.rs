@@ -15,7 +15,7 @@ pub fn item_factory(app: &mut ServiceConfig) {
 
     app.route(
         &item_path.define("/create/{title}".to_string()),
-        web::get().to(create),
+        web::post().to(create),
     );
 
     app.route(&item_path.define("/get".to_string()), web::get().to(get));
