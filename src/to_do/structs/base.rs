@@ -1,3 +1,4 @@
+#[derive(serde::Serialize)]
 pub struct Todo {
     pub title: String,
     pub status: String,
