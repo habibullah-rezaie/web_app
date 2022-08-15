@@ -25,7 +25,7 @@ pub trait Edit {
 
         match status.as_str().unwrap() {
             "done" => {
-                state.insert(title.to_string(), json!("done"));
+                state.insert(title.to_string(), json!("pending"));
                 write_to_file("state.json", state);
 
                 println!("{} is set to pending", title);
