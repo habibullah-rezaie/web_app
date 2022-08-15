@@ -1,5 +1,4 @@
 use actix_web::{HttpRequest, HttpResponse, Responder};
-use async_std::future::timeout;
 
 use crate::{
     process::process_input,
