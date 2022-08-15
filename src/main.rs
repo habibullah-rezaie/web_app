@@ -50,8 +50,12 @@ fn command_line_interface(args: &[String]) {
 }
 
 async fn run_server() -> io::Result<()> {
+    let port = env::var("PORT")
+        .unwrap_or_else(|_| "8080".to_string())
+        .parse()
+        .expect("PORT must be a number");
     HttpServer::new(|| App::new().configure(views_factory))
-        .bind("127.0.0.1:8080")?
+        .bind(("0.0.0.0", port))?
         .run()
         .await
 }
